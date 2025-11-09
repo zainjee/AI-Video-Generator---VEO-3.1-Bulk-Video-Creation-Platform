@@ -1,0 +1,44 @@
+ ✔ ai-video-app  Built                                                                                             0.0s 
+WARN[0000] /www/wwwroot/ai-video/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[+] Running 3/3
+ ✔ Network ai-video_app-network  Created                                                                           0.1s 
+ ✔ Container ai-video-postgres   Healthy                                                                          11.0s 
+ ✔ Container ai-video-app        Started                                                                          11.2s 
+root@webvpsserver:/www/wwwroot/ai-video# docker-compose ps
+WARN[0000] /www/wwwroot/ai-video/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+NAME                IMAGE                COMMAND                  SERVICE    CREATED          STATUS                            PORTS
+ai-video-app        ai-video-app         "docker-entrypoint.s…"   app        20 seconds ago   Up 3 seconds (health: starting)   127.0.0.1:5000->5000/tcp
+ai-video-postgres   postgres:16-alpine   "docker-entrypoint.s…"   postgres   20 seconds ago   Up 19 seconds (healthy)           5432/tcp
+root@webvpsserver:/www/wwwroot/ai-video# docker-compose logs --tail=30 app
+WARN[0000] /www/wwwroot/ai-video/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+ai-video-app  |     triggerUncaughtException(err, true /* fromPromise */);
+ai-video-app  |     ^
+ai-video-app  | 
+ai-video-app  | error: relation "users" does not exist
+ai-video-app  |     at /app/node_modules/pg-pool/index.js:45:11
+ai-video-app  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+ai-video-app  |     at async <anonymous> (/app/node_modules/src/node-postgres/session.ts:104:19)
+ai-video-app  |     at async DatabaseStorage.getUserByUsername (/app/server/storage.ts:83:20)
+ai-video-app  |     at async DatabaseStorage.initializeDefaultAdmin (/app/server/storage.ts:238:29)
+ai-video-app  |     at async <anonymous> (/app/server/index.ts:81:3) {
+ai-video-app  |   length: 105,
+ai-video-app  |   severity: 'ERROR',
+ai-video-app  |   code: '42P01',
+ai-video-app  |   detail: undefined,
+ai-video-app  |   hint: undefined,
+ai-video-app  |   position: '170',
+ai-video-app  |   internalPosition: undefined,
+ai-video-app  |   internalQuery: undefined,
+ai-video-app  |   where: undefined,
+ai-video-app  |   schema: undefined,
+ai-video-app  |   table: undefined,
+ai-video-app  |   column: undefined,
+ai-video-app  |   dataType: undefined,
+ai-video-app  |   constraint: undefined,
+ai-video-app  |   file: 'parse_relation.c',
+ai-video-app  |   line: '1449',
+ai-video-app  |   routine: 'parserOpenTable'
+ai-video-app  | }
+ai-video-app  | 
+ai-video-app  | Node.js v20.19.5
+root@webvpsserver:/www/wwwroot/ai-video# 

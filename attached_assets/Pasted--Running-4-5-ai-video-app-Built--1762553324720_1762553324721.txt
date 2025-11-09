@@ -1,0 +1,20 @@
++] Running 4/5
+ ✔ ai-video-app                   Built                                                                            0.0s 
+ ✔ Network ai-video_app-network   Created                                                                          0.1s 
+ ✔ Volume ai-video_postgres_data  Created                                                                          0.0s 
+ ⠼ Container ai-video-postgres    Starting                                                                         0.5s 
+ ✔ Container ai-video-app         Created                                                                          0.1s 
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint ai-video-postgres (25437a950585d4a45e1190d6781881c481a16c9d2e20af3e1143e6c132d5eb07): failed to bind host port for 127.0.0.1:5432:172.20.0.2:5432/tcp: address already in use
+root@webvpsserver:/www/wwwroot/ai-video# docker-compose ps
+WARN[0000] /www/wwwroot/ai-video/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+root@webvpsserver:/www/wwwroot/ai-video# docker ps
+CONTAINER ID   IMAGE                COMMAND                  CREATED        STATUS                    PORTS                                         NAMES
+aee2a4cf8f56   nofx-nofx-frontend   "/docker-entrypoint.…"   32 hours ago   Up 32 hours (unhealthy)   0.0.0.0:3000->80/tcp, [::]:3000->80/tcp       nofx-frontend
+9357fdb02c99   nofx-nofx            "./nofx"                 32 hours ago   Up 31 hours (unhealthy)   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp   nofx-trading
+dbaf99cf2765   n8nio/n8n:1.118.1    "tini -- /docker-ent…"   2 days ago     Up 2 days                 0.0.0.0:5679->5678/tcp                        n8n_webvpsserver_com
+af8e612ea38b   n8nio/n8n:latest     "tini -- /docker-ent…"   2 weeks ago    Up 2 days                 0.0.0.0:5678->5678/tcp                        workflowwebvpsservercom-workflow.webvpsserver.com-1
+root@webvpsserver:/www/wwwroot/ai-video# docker-compose ps
+WARN[0000] /www/wwwroot/ai-video/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+root@webvpsserver:/www/wwwroot/ai-video# 

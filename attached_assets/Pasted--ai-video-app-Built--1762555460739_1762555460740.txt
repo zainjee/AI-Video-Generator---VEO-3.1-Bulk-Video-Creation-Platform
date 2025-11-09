@@ -1,0 +1,17 @@
+ ✔ ai-video-app                 Built                                                                              0.0s 
+ ✔ Container ai-video-postgres  Healthy                                                                            0.7s 
+ ✔ Container ai-video-app       Started                                                                            1.0s 
+root@webvpsserver:/www/wwwroot/ai-video# docker-compose ps
+WARN[0000] /www/wwwroot/ai-video/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+NAME                IMAGE                COMMAND                  SERVICE    CREATED              STATUS                            PORTS
+ai-video-app        ai-video-app         "docker-entrypoint.s…"   app        About a minute ago   Restarting (127) 10 seconds ago   
+ai-video-postgres   postgres:16-alpine   "docker-entrypoint.s…"   postgres   19 minutes ago       Up 19 minutes (healthy)           5432/tcp
+root@webvpsserver:/www/wwwroot/ai-video# docker ps
+CONTAINER ID   IMAGE                COMMAND                  CREATED              STATUS                            PORTS                                         NAMES
+6c93750ac069   ai-video-app         "docker-entrypoint.s…"   About a minute ago   Restarting (127) 46 seconds ago                                                 ai-video-app
+73a3c1332514   postgres:16-alpine   "docker-entrypoint.s…"   20 minutes ago       Up 20 minutes (healthy)           5432/tcp                                      ai-video-postgres
+aee2a4cf8f56   nofx-nofx-frontend   "/docker-entrypoint.…"   32 hours ago         Up 32 hours (unhealthy)           0.0.0.0:3000->80/tcp, [::]:3000->80/tcp       nofx-frontend
+9357fdb02c99   nofx-nofx            "./nofx"                 32 hours ago         Up 32 hours (unhealthy)           0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp   nofx-trading
+dbaf99cf2765   n8nio/n8n:1.118.1    "tini -- /docker-ent…"   2 days ago           Up 2 days                         0.0.0.0:5679->5678/tcp                        n8n_webvpsserver_com
+af8e612ea38b   n8nio/n8n:latest     "tini -- /docker-ent…"   2 weeks ago          Up 2 days                         0.0.0.0:5678->5678/tcp                        workflowwebvpsservercom-workflow.webvpsserver.com-1
+root@webvpsserver:/www/wwwroot/ai-video# 

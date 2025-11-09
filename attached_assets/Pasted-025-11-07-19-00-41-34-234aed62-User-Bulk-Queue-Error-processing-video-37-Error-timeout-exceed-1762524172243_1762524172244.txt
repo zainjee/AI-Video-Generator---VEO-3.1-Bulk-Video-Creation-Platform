@@ -1,0 +1,81 @@
+025-11-07 19:00:41.34
+234aed62
+User
+[Bulk Queue] Error processing video 37: Error: timeout exceeded when trying to connect
+
+2025-11-07 19:00:41.34
+234aed62
+User
+at file:///home/runner/workspace/node_modules/@neondatabase/serverless/index.mjs:1345:74
+2025-11-07 19:00:41.34
+234aed62
+User
+at runNextTicks (node:internal/process/task_queues:60:5)
+2025-11-07 19:00:41.34
+234aed62
+User
+at listOnTimeout (node:internal/timers:545:9)
+2025-11-07 19:00:41.34
+234aed62
+User
+at process.processTimers (node:internal/timers:519:7)
+2025-11-07 19:00:41.34
+234aed62
+User
+at async NeonSession.transaction (file:///home/runner/workspace/node_modules/drizzle-orm/neon-serverless/session.js:135:67)
+2025-11-07 19:00:41.34
+234aed62
+User
+at async file:///home/runner/workspace/dist/index.js:387:18
+2025-11-07 19:00:41.34
+234aed62
+User
+at async withRetry (file:///home/runner/workspace/dist/index.js:147:14)
+2025-11-07 19:00:41.34
+234aed62
+User
+at async processSingleVideo (file:///home/runner/workspace/dist/index.js:954:21)
+2025-11-07 19:00:41.34
+234aed62
+User
+at async Promise.all (index 6)
+2025-11-07 19:00:41.34
+234aed62
+User
+at async processQueue (file:///home/runner/workspace/dist/index.js:1092:5)
+2025-11-07 19:00:44.74
+234aed62
+User
+[Bulk Queue] Error processing video 38: Error: timeout exceeded when trying to connect
+2025-11-07 19:00:44.74
+234aed62
+User
+at file:///home/runner/workspace/node_modules/@neondatabase/serverless/index.mjs:1345:74
+2025-11-07 19:00:44.74
+234aed62
+User
+at runNextTicks (node:internal/process/task_queues:60:5)
+2025-11-07 19:00:44.74
+234aed62
+User
+at listOnTimeout (node:internal/timers:545:9)
+2025-11-07 19:00:44.74
+234aed62
+User
+at process.processTimers (node:internal/timers:519:7)
+2025-11-07 19:00:44.74
+234aed62
+User
+at async NeonSession.transaction (file:///home/runner/workspace/node_modules/drizzle-orm/neon-serverless/session.js:135:67)
+2025-11-07 19:00:44.74
+234aed62
+User
+at async file:///home/runner/workspace/dist/index.js:387:18
+2025-11-07 19:00:44.74
+234aed62
+User
+at async withRetry (file:///home/runner/workspace/dist/index.js:147:14)
+2025-11-07 19:00:44.74
+234aed62
+User
+at async processSingleVideo (file:///home/runner/workspace/dist/index.js:954:21)
